@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pliki.budzik.ListaBudzikow">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="295.0" minWidth="10.0" prefWidth="294.0" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="306.0" minWidth="10.0" prefWidth="306.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints maxHeight="128.4" minHeight="0.0" prefHeight="17.000001907348633" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="468.40003051757816" minHeight="10.0" prefHeight="463.40003051757816" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="146.40000000000003" minHeight="2.3999694824218523" prefHeight="7.399969482421852" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <Label text="Aktywne Alarmy:" GridPane.columnSpan="2">
+         <GridPane.margin>
+            <Insets left="200.0" />
+         </GridPane.margin>
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Button mnemonicParsing="false" onAction="#dodaj" prefHeight="30.0" prefWidth="60.0" text="Dodaj" GridPane.rowIndex="2">
+         <GridPane.margin>
+            <Insets left="70.0" />
+         </GridPane.margin>
+      </Button>
+      <Button mnemonicParsing="false" onAction="#zakoncz" prefHeight="30.0" prefWidth="60.0" text="Zakończ" GridPane.columnIndex="1" GridPane.rowIndex="2">
+         <GridPane.margin>
+            <Insets left="180.0" />
+         </GridPane.margin>
+      </Button>
+      <ListView fx:id="lista" prefHeight="200.0" prefWidth="200.0" GridPane.columnSpan="2" GridPane.rowIndex="1" />
+   </children>
+</GridPane>

@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pliki.budzik.DodajBudzik">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="229.0" minWidth="10.0" prefWidth="198.0" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="202.0" minWidth="10.0" prefWidth="202.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="202.0" minWidth="10.0" prefWidth="202.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="202.0" minWidth="10.0" prefWidth="202.0" />
+      <ColumnConstraints />
+      <ColumnConstraints />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints maxHeight="195.4" minHeight="10.0" prefHeight="47.39999618530274" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="353.40000381469724" minHeight="10.0" prefHeight="91.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="346.3999847412109" minHeight="10.0" prefHeight="41.400000000000006" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="268.3999847412109" minHeight="10.0" prefHeight="74.4" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="259.3999847412109" minHeight="10.0" prefHeight="51.19999999999999" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="227.39999999999998" minHeight="10.0" prefHeight="41.99999999999994" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="200.79999999999995" minHeight="10.0" prefHeight="158.2" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="95.39999999999998" minHeight="10.0" prefHeight="95.39999999999998" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <TextField fx:id="nazwa" prefHeight="29.0" prefWidth="280.0" GridPane.columnSpan="4">
+         <GridPane.margin>
+            <Insets left="80.0" right="80.0" />
+         </GridPane.margin>
+      </TextField>
+      <Label text="Nazwa:">
+         <font>
+            <Font size="14.0" />
+         </font>
+         <GridPane.margin>
+            <Insets left="30.0" />
+         </GridPane.margin>
+      </Label>
+      <Button mnemonicParsing="false" onAction="#zapisz" prefHeight="30.0" prefWidth="60.0" text="Zapisz" GridPane.columnSpan="3" GridPane.rowIndex="7">
+         <GridPane.margin>
+            <Insets left="70.0" />
+         </GridPane.margin></Button>
+      <Button mnemonicParsing="false" onAction="#anuluj" prefHeight="30.0" prefWidth="60.0" text="Anuluj" GridPane.columnIndex="3" GridPane.columnSpan="3" GridPane.rowIndex="7">
+         <GridPane.margin>
+            <Insets left="20.0" />
+         </GridPane.margin>
+      </Button>
+      <Button mnemonicParsing="false" onAction="#zwiekszGodzine" prefHeight="20.0" prefWidth="40.0" text="+" GridPane.columnIndex="1" GridPane.rowIndex="1">
+         <GridPane.margin>
+            <Insets left="40.0" top="70.0" />
+         </GridPane.margin>
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Button mnemonicParsing="false" onAction="#zwiekszMinute" prefHeight="20.0" prefWidth="40.0" text="+" GridPane.columnIndex="2" GridPane.rowIndex="1">
+         <GridPane.margin>
+            <Insets left="40.0" top="70.0" />
+         </GridPane.margin>
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Button mnemonicParsing="false" onAction="#zmniejszGodzine" prefHeight="20.0" prefWidth="40.0" text="-" GridPane.columnIndex="1" GridPane.rowIndex="3">
+         <GridPane.margin>
+            <Insets bottom="50.0" left="40.0" />
+         </GridPane.margin>
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button mnemonicParsing="false" onAction="#zmniejszMinute" prefHeight="20.0" prefWidth="40.0" text="-" GridPane.columnIndex="2" GridPane.rowIndex="3">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <GridPane.margin>
+            <Insets bottom="50.0" left="40.0" />
+         </GridPane.margin>
+      </Button>
+      <TextField fx:id="godzina" alignment="CENTER" editable="false" prefHeight="41.0" prefWidth="40.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+         <GridPane.margin>
+            <Insets left="40.0" right="72.0" />
+         </GridPane.margin>
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="minuta" alignment="CENTER" editable="false" prefHeight="41.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
+         <GridPane.margin>
+            <Insets left="40.0" right="72.0" />
+         </GridPane.margin>
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </TextField>
+      <ToggleButton fx:id="powNie" mnemonicParsing="false" prefHeight="30.0" prefWidth="50.0" selected="true" text="Nie" GridPane.columnIndex="1" GridPane.rowIndex="4">
+         <toggleGroup>
+            <ToggleGroup fx:id="powtarzanie" />
+         </toggleGroup>
+         <GridPane.margin>
+            <Insets left="50.0" />
+         </GridPane.margin>
+      </ToggleButton>
+      <ToggleButton fx:id="powTak" mnemonicParsing="false" prefHeight="30.0" prefWidth="50.0" text="Tak" toggleGroup="$powtarzanie" GridPane.columnIndex="1" GridPane.rowIndex="4">
+         <GridPane.margin>
+            <Insets />
+         </GridPane.margin>
+      </ToggleButton>
+      <Label text="Powtarzanie:" GridPane.columnSpan="2" GridPane.rowIndex="4">
+         <GridPane.margin>
+            <Insets left="70.0" />
+         </GridPane.margin>
+      </Label>
+      <CheckBox fx:id="pon" mnemonicParsing="false" text="pon" GridPane.rowIndex="5">
+         <GridPane.margin>
+            <Insets left="100.0" />
+         </GridPane.margin>
+      </CheckBox>
+      <CheckBox fx:id="wt" mnemonicParsing="false" text="wt" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+      <CheckBox fx:id="sr" mnemonicParsing="false" text="sr" GridPane.columnIndex="1" GridPane.rowIndex="5">
+         <GridPane.margin>
+            <Insets left="40.0" />
+         </GridPane.margin>
+      </CheckBox>
+      <CheckBox fx:id="czw" mnemonicParsing="false" text="czw" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="5">
+         <GridPane.margin>
+            <Insets left="80.0" />
+         </GridPane.margin>
+      </CheckBox>
+      <CheckBox fx:id="pt" mnemonicParsing="false" text="pt" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="5">
+         <GridPane.margin>
+            <Insets left="130.0" />
+         </GridPane.margin>
+      </CheckBox>
+      <CheckBox fx:id="sob" mnemonicParsing="false" text="sob" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.rowIndex="5">
+         <GridPane.margin>
+            <Insets left="20.0" />
+         </GridPane.margin>
+      </CheckBox>
+      <CheckBox fx:id="nd" mnemonicParsing="false" text="nd" GridPane.columnIndex="2" GridPane.rowIndex="5">
+         <GridPane.margin>
+            <Insets left="70.0" />
+         </GridPane.margin>
+      </CheckBox>
+      <Slider fx:id="poziomGlos" prefHeight="14.0" prefWidth="273.0" value="100.0" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.rowIndex="6">
+         <GridPane.margin>
+            <Insets bottom="50.0" right="50.0" />
+         </GridPane.margin>
+      </Slider>
+      <Label text="Gloscnosc:" GridPane.rowIndex="6">
+         <GridPane.margin>
+            <Insets bottom="50.0" left="80.0" />
+         </GridPane.margin>
+      </Label>
+      <Button mnemonicParsing="false" onAction="#all" text="all" GridPane.columnIndex="3" GridPane.rowIndex="5">
+         <GridPane.margin>
+            <Insets />
+         </GridPane.margin>
+      </Button>
+      <Label fx:id="blad" GridPane.columnSpan="4" GridPane.rowIndex="6">
+         <GridPane.margin>
+            <Insets left="50.0" top="70.0" />
+         </GridPane.margin>
+      </Label>
+   </children>
+</GridPane>
